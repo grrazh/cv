@@ -35,6 +35,9 @@
 \def \name#1{\def\@name{#1}} % Defines the \name command to set name
 \def \@name {} % Sets \@name to empty by default
 
+\def \occupation#1{\def\@occupation{#1}} % Defines the \occupation command to set name
+\def \@occupation {} % Sets \@occupation to empty by default
+
 \def \addressSep {$\diamond$} % Set default address separator to a diamond
 
 % One or two address lines can be specified 
@@ -68,6 +71,16 @@
   \endgroup
 }
 
+% \printoccupation is used to print the name as a page header
+\def \printoccupation {
+  \begingroup
+  \begin{center}
+    \hfil{{\occupationsize\bf \@occupation}}\hfil
+    \occupationskip\break
+  \end{center}
+  \endgroup
+}
+
 %----------------------------------------------------------------------------------------
 %	PRINT THE HEADING LINES
 %----------------------------------------------------------------------------------------
@@ -76,6 +89,7 @@
 \renewcommand{\document}{
   \ori@document  % Begin document
   \printname % Print the name specified with \name
+  \printoccupation
   \@ifundefined{@addressone}{}{ % Print the first address if specified
     \printaddress{\@addressone}}
   \@ifundefined{@addresstwo}{}{ % Print the second address if specified
@@ -119,7 +133,9 @@
 
 % The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
 \def\namesize{\huge} % Size of the name at the top of the document
+\def\occupationsize{\Large} % Size of the name at the top of the document
 \def\addressskip{\smallskip} % The space between the two address (or phone/email) lines
 \def\sectionlineskip{\medskip} % The space above the horizontal line for each section 
-\def\nameskip{\bigskip} % The space after your name at the top
+\def\nameskip{\smallskip} % The space after your name at the top
+\def\occupationskip{\smallskip} % The space after your name at the top
 \def\sectionskip{\medskip} % The space after the heading section
