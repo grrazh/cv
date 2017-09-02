@@ -5,4 +5,4 @@ all:
 	open cv.pdf
 
 clean:
-	rm *.aux *.log *.toc
+	rm -f *.aux *.log *.toc
