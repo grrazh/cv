@@ -19,8 +19,11 @@
 \documentclass{resume} % Use the custom resume.cls style
 
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage{tabularx}
 
 \name{Grazyna Huzik} % Your name
+\occupation{ Web Designer / Front-End Developer }
+ % Your position
 \address{Newtown, PA} % Your address
 \address{+1-216-246-8249 \\ grazhina.guzik@gmail.com} % Your phone number and email
 
@@ -34,13 +37,14 @@
 
 {\bf Belarusian State University of Informatics and Radioelectronics, Minsk} \hfill {\em July 2016} \\ 
 The Institute of Information Technologies \\
-B.S. in Web Design and Computer Graphics \smallskip \\
+B.S. in Web Design and Computer Graphics \smallskip
 
 {\bf Belarusian State University, Minsk} \hfill {\em June 2016} \\ 
 The Institute of Journalism \\
-B.A. in Web Journalism \\
+B.A. in Web Journalism % \\
 
 \end{rSection}
+
 
 %----------------------------------------------------------------------------------------
 %   TECHNOLOGY SECTION
@@ -48,28 +52,43 @@ B.A. in Web Journalism \\
 
 \begin{rSection}{Have experience with}
 
-\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-Operating Systems     & Linux (Ubuntu), macOS, Windows \smallskip \\
+\begin{tabular}{ @{} >{\bfseries}p{6cm} @{\hspace{6ex}} l }
 
-Programming Languages & JavaScript, PHP \smallskip \\
+Graphics Software & Adobe Creative Suite(Photoshop, Illustrator, InDesign,\\ 
+                  & Lightroom, After Effects), 3D Studio MAX, CorelDRAW, \\ 
+                  & Corel PHOTO-PAINT \smallskip \\
+Data Visualization Software & Tableau \smallskip\\
+Mockup Tools      & Moqups, InVision \smallskip \\
+Front-End Technologies   & HTML5, CSS3, SASS/SCSS, Less, Bootstrap \smallskip \\
+Programming Languages  & JavaScript, PHP \smallskip \\
+Content Management Systems & Wordpress, Joomla \smallskip \\ 
+Server technologies    & Apache Web Server \smallskip \\
+SQL Databases          & MySQL \smallskip \\
+Operating Systems      & MacOS, Windows, Linux (Ubuntu) \smallskip \\
 
-Markup and Typesetting & \LaTeX, HTML, CSS, SASS/SCSS, Less, Bootstrap \smallskip \\
-
-Server technologies   & Apache Web Server \smallskip \\
-
-SQL Databases & MySQL \smallskip \\
-
-Tools & zsh, git, emacs, vim, tmux, gpicker, ctags, the silver searcher, \\
-      & GNU Global, splint, gdb, strace, valgrind, gprof \smallskip \\
-% Photoshop, Illustrator, InDesign, Lightroom, Adobe After Effects, 3D Studio MAX, CorelDRAW, Corel PHOTO-PAINT, Gimp
-
-%  Mockup Tools & InVision, Moqups
-Programming paradigms & Imperative, Object-oriented (class-based, prototype-based), \\
-                      & Functional, Concatenative (stack-based), Logical (predicate logic, \\
-                      & rewriting logic).
 \end{tabular}
 
 \end{rSection}
+
+
+%----------------------------------------------------------------------------------------
+%   LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Languages}
+
+\begin{tabularx}{\textwidth}{@{} >{\bfseries}p{6cm} @{\hspace{6ex}} l }
+
+Russian & Native Speaker \smallskip \\
+
+Belarusian & Native Speaker \smallskip \\ 
+
+English & Advanced \smallskip \\
+
+\end{tabularx}
+
+\end{rSection}
+
 
 %----------------------------------------------------------------------------------------
 %   WORK EXPERIENCE SECTION
@@ -77,184 +96,61 @@ Programming paradigms & Imperative, Object-oriented (class-based, prototype-base
 
 \begin{rSection}{Work positions}
 
-\begin{rSubsection}{Atlassian}{December 2016 - Present}{Senior Clojure Developer}{Sydney, Australia}
-
-% At the moment I have worked only 7.5 months. It is somewhat hard to evaluate my own performance, as I always think that I could have done so much more. Also, because I often tend to be interested in big, architecture-level changes, they go slower than I'd wish and it's harder to show. Nevertheless, since I joined the team I have done the following things:
-% - maintainability improvements:
-%   - reorganization of the code base
-%     - decluttered repository toplevel
-%     - cleaned up obsolete/abandoned branches (with automatic script to do that periodically)
-%   - shrinked application bundle size twice (from 100mb to 50mb), which made deployments noticeably faster
-%   - formulated automated versioning strategy in a way that does not require conscious effort from the developers, and is helpful for the server team to understand amount and severity of changes.
-%   - proposed and added jvm memory consumption metrics, so we can see when GC happens and can understand it's implications on the dynamic behavior of the system
-% - productivity
-%   - automation of manual deployments. allows developers to test changes in ddev/adev/staging faster. instead of commiting, and clicking your way through bamboo you can deploy your local code tree directly with just one command.
-%   - automation of versioning. Developers don't need to review all code changes since last version change and manually edit the version. After a while you don't even notice that you are doing versioning.
-% - Readability and understandability of the code
-%   - Insisted on starting doing proper code reviews. Found a compromise to start doing that after going 100% GA
-%   - created a glossary of terms for increasing consistency and noticing ambiguities in naming we use, so that we can improve it.
-%   - have been doing code reviews. gave suggestions on improving naming
-%   - insisted on strict adherence to our code style guide
-% - Architecture
-%   - Reworking build process (cleaned up a lot of obsolete stuff, simplified clojurescript and uberjar build process, working on splitting synchrony into smaller subprojects)
-%   - Dockerization
-%   - Grand vision of splitting synchrony into smaller, easier to maintain pieces
-%     - part 1: clustering
-%       - extracted into synchrony-clustering microservice
-%       - synchrony part is decoupled from the mechanism of getting list of active nodes, so hazelcast-based (or even completely static) implementation can be created for ConfServer synchrony, keeping synchrony identical between cloud and server. 
-%     - part 2: accepting client connections and routing them to correct synchrony processing nodes
-%       - have been accepted as a valuable option by Tobias
-%       - prerequisites for the implementation have been tested
-%       - turned out impossible to implement due sticky sessions being unsupported for websockets in AWS, and direct connections to nodes being disallowed by micros
-%       - investigated an option to use Kubernetes (at that moment it turned out to not be ready for deploying production services)
-%       - have recently found a way to overcome the limitations of aws/micros, so desired architecture could be implemented in a relatively straightforward way. will pursue it after finishing rework of the build pipeline 
-%   - Led Synchrony Architecture Bootcamp (02/05/2017).
-%   - Participated in architecture review (05/06/2017).
-% - Got into Ship-It finals
-% Other than that I have participated in interviewing potential candidates, have been helping with onboarding, have been pairing with other team members, doing on-call job, and working with support to investigate customer issues (sometimes during after hours). 
-% Regarding company values - most of the stuff above is BTCYS, which is the value that resonates the most with me. Help with onboarding, pairing, substituting other team members for on-call time is PAAT. Working with support investigating customer issues, and regular work to make Synchrony more stable/reliable is DFTC. I think that calling up on issues with the codebase and Tobias could be labeled as OCNB, though I'm still unsure if my actions were right.
-~
+\begin{rSubsection}{Rubyroid Labs, LLC}{August 2016 - October 2016}{UX / UI Designer}{Minsk, Belarus}
+\item Developed possible user scenarios.
+\item Created wireframes and interactive prototypes.
+\item Designed user interfaces.
+\item Worked closely with a front-end developer.
 \end{rSubsection}
 
-\begin{rSubsection}{Filemporium}{July 2015 - December 2016}{Lead Clojure Developer}{Remote via Upwork}
-\item Setup temporary deplyoment via docker and dokku
-\item Revised architecture in a way that drastically simplified client-side
-  state management and allowed live page update of all active user sessions
-\item Reengineered project build system using boot (previously leiningen were used).
-  Fixed project build time (full recompilation now takes just a couple of minutes
-  instead of an hour). Adjusted project code to work with reloaded workflow.
-\item Documented project structure, project-specific code conventions, technical decisions, troubleshooting, and Amazon S3 project-specific step-by-step configuration guide
-\item Implemented production-ready multiserver setup with zero-downtime deployment using NixOS/NixOps and Consul
-\item Refactored most of the project, implemented lots of functionality and fixed lots of bugs (e.g added
-  config schema validation, cleaned up garbage logging (like {\tt (println "!!! FOO:" x)}) and implemented
-  propper configurable logging throughout the system, implemented chunked file upload with automatic reconnection, etc.)
-\item Interviewed potential candidates
-\item Regularly did code reviews
-\item Did pair programming (to assist others with complicated tasks, to share project knowledge, to get
-  back on track when I'm stuck)
-\item Fired a programmer that have been writing terrible code
+\begin{rSubsection}{SocialJet}{August 2015 - November 2015}{Junior Graphic Designer}{Minsk, Belarus}
+\item Created "selling" teasers and banners for social media.
+\item Edited and retouched photos.
+\item Made collages.
+\item Worked on photomontage and photo manipulation.
 \end{rSubsection}
 
-\begin{rSubsection}{Filemporium}{May 2015 - July 2015}{Clojure Developer}{Remote via Upwork}
-\item Automated design updates
-\item Added compile-time template checks to kioo templating library to ensure
-  component correctness after design update
-\item Added support for using arbitrary npm libraries from ClojureScript code (to be
-  able to utilize existing js React components)
-\item Started writing project documentation. Documented actions needed to setup
-  a project, update design, add npm library
 
-% ~
+\begin{rSubsection}{Streamline}{January 2014 - June 2014}{Technical Editor}{Minsk, Belarus}
+\item Scanned books and documents (sometimes unformatted and damaged).
+\item Edited and retouched scanned pages.
+\item Restored damaged book covers and other scanned imagery. 
 \end{rSubsection}
 
-\begin{rSubsection}{Softswiss Casino Software}{October 2014 - May 2015}{Senior Software Engineer}{Minsk, Belarus}
-\item Implemented integrations with external game providers (CasinoTechnology, Fengaming)
-\item Implemented completely custom design for new customer (HTML/CSS)
-\item Worked on external wallet api implementation
-\end{rSubsection}
+\begin{rSubsection}{Belinfocenter / 21.by}{August 2012 - February 2013 (FT) / February 2013 - February 2016 (PT) }{Journalist, SMM Manager}{Minsk, Belarus / Remote}
+\item Wrote news stories, reports and interviews.
+\item Worked on SEO of the website. 
+\item Developed web-content (including surveys, contests, etc.).
+\item Participated in creating video content.
+\item Promoted the website on social media (VK, Facebook, Twitter, OK.ru).
 
-\begin{rSubsection}{Rubyroid Labs, LLC}{April 2014 - September 2014}{Senior Software Engineer/Team Leader}{Minsk, Belarus}
-\item Designed application architecture
-\item Managed project development
-\item Did code reviews
-\item Solely implemented some internal services
-\end{rSubsection}
-
-\begin{rSubsection}{Intetics Co.}{July 2013 - April 2014}{Senior Software Engineer}{Minsk, Belarus}
-\item Made fully-automated production server setup
-\item Worked on refactoring legacy codebase
-\item Worked on security-related features (IP whitelisting, XSS testing)
-\item Implemented backend service for mobile apps.
-\item Implemented automatic management of VPN servers DNS rotation
-\item Did code reviews
-\end{rSubsection}
-
-\begin{rSubsection}{\parbox[t][2em][t]{9cm}{Belarusian State University of Informatics and Radioelectronics}}{February 2013 - January 2014 }{Teaching assistant at Electronic Computing Machines Department (part-time)}{Minsk, Belarus}
-\item Taught first-year students programming in C.
-\item Taught fourth-year students IP networking.
-\item Taught students how to use Git and GitHub.
-\item Together with students formalized grading criteria.
-\item Formalized some code quality metrics.
-\item Regularly reviewed students' code.
-\item Taught Linux for interested students in my spare time.
-\end{rSubsection}
-
-\begin{rSubsection}{PowerMeMobile, Inc.}{January 2013 - February 2013}{Problem solver}{Minsk, Belarus}
-\item Gave an idea of automating deployment process (new tier deployments may take up to
-  a month of SysAdmin team work).
-\item Implemented initial stages of deployment automation (installing base cluster software,
-  configuring corosync/pacemaker, installing and configuring DRBD and nginx as resource agents) using Chef.
-\item Made entire deployment configurable from a single place (from chef workstation using node attributes).
-\item Got an agreement on opensourcing this efforts.
-\end{rSubsection}
-
-\begin{rSubsection}{Altoros Systems, Inc.}{October 2011 - September 2012}{Software Engineer in Ruby department}{Minsk, Belarus}
-\item Proved that custom multisite functionality is a bad idea. Dropped the hacks and refactored application to use rails 3 engines.
-\item Participated in porting internal RightScale services (mostly sinatra+cassandra) to JRuby to utilize native Thrift.
-\item Participated in all stages of design and development on many projects.
-\end{rSubsection}
-
-\begin{rSubsection}{Itransition, Inc.}{February 2011 - October 2011}{Junior Developer in Ruby department}{Minsk, Belarus}
-\item Solely ported large social gaming engine from Rails 2 to Rails 3.
-\item Initiated using SCSS and Compass, which led to stylesheets development and modification speedup.
-\item Configured production server from scratch and setup automated Capistrano deployment.
 \end{rSubsection}
 
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
-%   NOTES SECTION
+%   INTERNATIONAL PROGRAMS SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Some facts to better understand what kind of person I am}
-  \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
-    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
-  \item I decided to tie my work to computers when I was 5.
-  \item First program in BASIC at age of 11, first HTML and JavaScript at 12, first program in Pascal at 13.
-  \item I started playing with Linux when I was 14 (it was Mandrake 10 in 2005)
-  \item I use Dvorak keyboard layout
-  \item I use Archlinux with lots of handwritten scripts and i3 tiling window manager as my work environment.
-  \item I tend to automate everything I could.
-  \item I started using Emacs at 2010 and never looked back. Since 2011 I use it with Evil (vim emulation layer)
-  \item I have dozens of personal opensource projects and have contributed to
-        upstream of at least 20 other.
-  \item Some time ago I was passionate about japanese animation, so I learned
-        some japanese and passed an international exam (JLPT4 certificate). I remember myself
-        learning Esperanto and Toki Pona, and now I am learning Lojban.
-  \item I am an active ACM and ACM SIGPLAN member.
-  \item One of my primary interests is programming languages. I am still thinking of one
-        that would be perfectly expressive. I have plans for PhD in that field.
-  \item I write tests very rarely and when I feel I wish to write one, I know that
-    I should search for more simple solution that will be obviously working and not
-    require any iterative validation. I do not believe that writing tons
-    of tests may lead to good system design. More often it leads to design that is hard to change
-    in any meaningful way. Instead of going test-first I go think-first, and don't start writing
-    code until I clearly know what I'm going to write and why.
-  \end{list}
+\begin{rSection}{Participation in international programs}
+\begin{rSubsection}{FOJO Media Institute (Linnaeus University)}{September 2014}{Intern}{Kalmar, Sweden}
+\item Studied journalism at FOJO Media Institute.
+\item Learned from journalists, photographers and editors at a local newspaper "Barometern".
+\end{rSubsection}
+
+\begin{rSubsection}{Students Exchange Program "Work and Travel USA"}{June - August 2014}{Exchange Student}{Cleveland, OH}
+\item Visited the USA for the first time.
+\item Worked at the restaurant.
+\item Learned a lot about American culture.
+\end{rSubsection}
+
+\begin{rSubsection}{Students Program "Belarus — Lithuania: Youth Dialogue and Development"}{November 2013}{Participant}{Vilnius, Lithuania}
+\item Attended meetings with EHU's Vise-Rector for Academic Affairs, members of ISM Students' Union and ex-Minister of Education and Science in Lithuanian Parliament.
+\item Participated in numerous discussions about differences between Belarusian and Lithuanian systems of higher education and the role of students government in it.
+\end{rSubsection}
+
 \end{rSection}
 
-%----------------------------------------------------------------------------------------
-%   INTERESTS SECTION
-%----------------------------------------------------------------------------------------
 
-\begin{rSection}{Growth directions}
-  \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
-    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
-  \item Programming paradigms and programming languages
-  \item Rewriting logic (Maude system in particular)
-  \item Minimal syntax programming languages: Lisp (Clojure, Common Lisp, Scheme,
-        Qi/Shen), FORTH, Factor, APL, Tcl, Refal, Rebol, Smalltalk
-  \item Programming music (Overtone, Extempore) and visuals (Quil, Processing, Fluxus)
-  \item Learning to draw
-  \item Semantics
-  \item Constructed languages
-  \item Neuroscience
-  \item Statistics and Machine Learning
-  \end{list}
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
 
 \end{document}
